@@ -39,6 +39,7 @@ func main() {
 }
 
 func BindRoutes(s server.Server, r *mux.Router) {
+	log.Println("handlers")
 	r.HandleFunc("/", handlers.HomeHandler(s)).Methods(http.MethodGet)
 	r.HandleFunc("/iotdevice/{id}", handlers.GetIotDeviceByHandler(s)).Methods(http.MethodGet)
 	r.HandleFunc("/iotdevice", handlers.InsertIotDeviceByHandler(s)).Methods(http.MethodPost)
