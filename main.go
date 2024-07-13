@@ -9,15 +9,15 @@ import (
 	"github.com/go/qualityWater/src/handlers"
 	"github.com/go/qualityWater/src/server"
 	"github.com/gorilla/mux"
-	// "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	// err := godotenv.Load(".env")
+	err := godotenv.Load(".env")
 
-	// if err != nil {
-	// 	log.Fatal("error loading .env file")
-	// }
+	if err != nil {
+		log.Fatal("error loading .env file")
+	}
 
 	PORT := os.Getenv("PORT")
 	DATABASE_URL := os.Getenv("MONGODB_URI")
