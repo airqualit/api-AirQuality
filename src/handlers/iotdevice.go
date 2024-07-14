@@ -5,6 +5,7 @@ import (
 	"errors"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/go/qualityWater/src/models"
 	"github.com/go/qualityWater/src/repository"
@@ -98,6 +99,7 @@ func InsertIotDeviceByHandler(s server.Server) http.HandlerFunc {
 		newIotDevice := models.IotDevice{
 			Id:   uuid.NewString(),
 			Data: *data,
+			Hour: time.Now(),
 		}
 
 		iotdeviceID, err := repository.InsertGateway(r.Context(), &newIotDevice)

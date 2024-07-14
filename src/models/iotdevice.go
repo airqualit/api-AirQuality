@@ -1,8 +1,11 @@
 package models
 
+import "time"
+
 type IotDevice struct {
-	Id   string `json:"id"`
-	Data Data   `json:"data"`
+	Id   string    `json:"id"`
+	Hour time.Time `json:"hour"`
+	Data Data      `json:"data"`
 }
 
 type Data struct {
